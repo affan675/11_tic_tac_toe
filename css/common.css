@@ -1,0 +1,449 @@
+/* xOarena/css/common.css */
+/* Global styles, navbar, preloader, cursor, toast, celebration, right-click menu */
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Outfit', 'Space Grotesk', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  /* Default cursor hidden when custom cursor is active */
+  cursor: none;
+}
+
+/* When custom cursor is disabled via body class */
+body.custom-cursor-disabled {
+  cursor: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* Main content area offset for left navbar */
+.main-content {
+  margin-left: 70px;
+  padding: 2rem 2rem 2rem 1rem;
+  min-height: 100vh;
+  transition: margin-left 0.3s;
+}
+
+/* Left vertical navbar */
+.nav-vertical {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 70px;
+  background: var(--surface);
+  border-right: 2px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.8rem;
+  z-index: 1000;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  font-size: 1.8rem;
+  border-radius: 50%;
+  background: transparent;
+  transition: all 0.25s;
+  color: var(--text);
+}
+
+.nav-icon:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: scale(1.08);
+}
+
+.nav-icon.active {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 0 15px var(--primary);
+}
+
+/* Preloader */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.preloader-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--border);
+  border-top: 4px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.preloader-text {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: 2px;
+}
+
+/* ===== Global Cursor Lock ===== */
+body:not(.custom-cursor-disabled) * {
+  cursor: none !important;
+}
+
+/* Custom Cursor Container */
+.custom-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+
+/* Dot – follows mouse exactly */
+.cursor-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--primary);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.15s, height 0.15s, background 0.15s;
+}
+
+/* Ring – magnetic lag */
+.cursor-ring {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, border-color 0.3s, background 0.3s;
+  box-sizing: border-box;
+}
+
+/* Hover State – enlarge ring & change color */
+.cursor-ring.hovering {
+  width: 48px;
+  height: 48px;
+  border-color: var(--x-symbol);
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.cursor-dot.hovering {
+  width: 16px;
+  height: 16px;
+  background: var(--x-symbol);
+}
+.custom-cursor.hovering {
+  width: 42px;
+  height: 42px;
+  background: var(--x-symbol);
+}
+
+/* Toast */
+.toast-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 8000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.toast {
+  background: var(--surface);
+  color: var(--text);
+  padding: 12px 24px;
+  border-radius: 30px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  border: 1px solid var(--border);
+  font-weight: 600;
+  font-size: 0.95rem;
+  animation: slideInRight 0.4s ease, fadeOut 0.5s 2.5s forwards;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(120%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes fadeOut {
+  to { opacity: 0; transform: translateY(-10px); }
+}
+
+/* Right-click menu */
+.right-click-menu {
+  position: fixed;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  z-index: 9000;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+}
+
+.right-click-menu button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-align: left;
+  font-weight: 500;
+  color: var(--text);
+  transition: background 0.2s;
+}
+
+.right-click-menu button:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* Celebration overlay */
+.celebration-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 4rem;
+}
+
+.celebration-emoji {
+  animation: emojiPop 0.6s ease-out forwards, emojiFloat 2s ease-in-out infinite;
+}
+
+@keyframes emojiPop {
+  0% { transform: scale(0) rotate(0deg); opacity: 0; }
+  60% { transform: scale(1.4) rotate(15deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+@keyframes emojiFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+/* Buttons general */
+.btn {
+  padding: 0.75rem 1.8rem;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 4px 15px rgba(59,130,246,0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59,130,246,0.4);
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text);
+  border: 2px solid var(--border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Enhanced Preloader Styles */
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.preloader-tagline {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fight arena */
+.preloader-fight {
+  position: relative;
+  width: 180px;
+  height: 120px;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fighter {
+  position: absolute;
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-shadow: 0 0 8px currentColor;
+  transition: transform 0.1s ease;
+}
+
+.fighter-x {
+  color: var(--x-symbol);
+  left: 30%;
+  animation: floatX 2s infinite alternate ease-in-out;
+}
+
+.fighter-o {
+  color: var(--o-symbol);
+  right: 30%;
+  animation: floatO 2s infinite alternate ease-in-out;
+}
+
+@keyframes floatX {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(20px, -15px) rotate(15deg); }
+}
+
+@keyframes floatO {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-20px, 15px) rotate(-15deg); }
+}
+
+/* Clash effect */
+.fighter.clash {
+  animation: clash 0.3s ease;
+}
+
+@keyframes clash {
+  0% { transform: scale(1) rotate(0); }
+  50% { transform: scale(1.4) rotate(25deg); filter: drop-shadow(0 0 15px currentColor); }
+  100% { transform: scale(1) rotate(0); }
+}
+
+/* Loading bar */
+.preloader-bar-container {
+  width: 240px;
+  height: 6px;
+  background: var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.preloader-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--x-symbol), var(--o-symbol));
+  border-radius: 20px;
+  transition: width 0.2s linear;
+  position: relative;
+}
+
+.preloader-bar::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20px;
+  height: 100%;
+  background: white;
+  opacity: 0.6;
+  border-radius: 20px;
+  animation: pulse 0.8s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}

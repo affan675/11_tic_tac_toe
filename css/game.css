@@ -1,0 +1,158 @@
+/* xOarena/css/game.css */
+/* Styles for game board, turn indicator, scoreboard, cells – shared between two_players and ai pages */
+
+.game-main,
+.ai-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  min-height: 100vh;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  width: 100%;
+  max-width: 500px;
+  background: var(--surface);
+  border-radius: 30px;
+  padding: 2rem 1.5rem;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border);
+}
+
+.game-page-title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  text-align: center;
+}
+
+.turn-indicator {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.turn-symbol {
+  font-size: 2rem;
+  font-weight: 800;
+  opacity: 0.4;
+  transition: all 0.3s;
+}
+
+.turn-symbol.active {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.turn-symbol.turn-x.active {
+  color: var(--x-symbol);
+}
+.turn-symbol.turn-o.active {
+  color: var(--o-symbol);
+}
+
+.scoreboard {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.score-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--hover-bg);
+  padding: 0.5rem 1.2rem;
+  border-radius: 16px;
+  min-width: 70px;
+}
+
+.score-symbol {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--x-symbol);
+}
+.score-item.score-o .score-symbol {
+  color: var(--o-symbol);
+}
+.score-label {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.score-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* ========= Game Board ========= */
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);   /* force equal row heights */
+  gap: 10px;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1 / 1;                 /* keeps it square */
+}
+
+.cell {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* responsive font: scales with board size but never too huge */
+  font-size: clamp(2rem, 10vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--text);
+  position: relative;
+  box-shadow: var(--glow);
+  overflow: hidden;                     /* prevent content from expanding cell */
+}
+
+.cell:hover {
+  background: var(--hover-bg);
+  border-color: var(--primary);
+}
+
+.cell.x-symbol {
+  color: var(--x-symbol);
+}
+.cell.o-symbol {
+  color: var(--o-symbol);
+}
+
+.cell.win-highlight {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: var(--x-symbol);
+}
+
+/* Status & actions */
+.game-status {
+  font-size: 1.1rem;
+  font-weight: 600;
+  min-height: 2rem;
+  color: var(--primary);
+  text-align: center;
+}
+
+.game-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}

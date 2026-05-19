@@ -1,0 +1,172 @@
+/* xOarena/css/ai.css */
+/* Styles specific to AI Battle page – clean layout, left‑aligned info, persistent speech bubble */
+
+.ai-main {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2rem;
+  align-items: start;
+  padding: 2rem 2rem 2rem 1rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.bot-panel {
+  background: var(--surface);
+  border-radius: 24px;
+  padding: 1.8rem;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border);
+  height: fit-content;
+  position: sticky;
+  top: 1rem;
+}
+
+.bot-panel-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bot-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.bot-list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  border-radius: 14px;
+  background: var(--hover-bg);
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+.bot-list-item:hover {
+  border-color: var(--primary);
+  background: var(--surface);
+}
+
+.bot-list-item.selected {
+  border-color: var(--primary);
+  background: var(--surface);
+  box-shadow: 0 0 15px var(--primary);
+}
+
+.bot-avatar {
+  font-size: 2rem;
+}
+
+.bot-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.bot-name {
+  font-weight: 700;
+}
+
+.bot-difficulty {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  width: fit-content;
+  margin-top: 2px;
+}
+
+.bot-difficulty.easy { background: #10b98130; color: #10b981; }
+.bot-difficulty.easy-plus { background: #3b82f630; color: #3b82f6; }
+.bot-difficulty.medium { background: #f59e0b30; color: #f59e0b; }
+.bot-difficulty.hard { background: #ef444430; color: #ef4444; }
+.bot-difficulty.expert { background: #8b5cf630; color: #8b5cf6; }
+
+/* Right side game container */
+.ai-game-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Bot row: avatar+name left, speech bubble right */
+.ai-bot-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.bot-opponent-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bot-opponent-avatar {
+  font-size: 2rem;
+}
+
+.bot-opponent-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* Speech bubble – attached to the right of bot info */
+.speech-bubble {
+  background: var(--surface);
+  border: 2px solid var(--primary);
+  border-radius: 20px;
+  padding: 0.6rem 1.2rem;
+  max-width: 240px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  animation: fadeInUp 0.3s ease;
+  position: relative;
+}
+
+/* Arrow pointing left */
+.speech-bubble::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 10px solid transparent;
+  border-right-color: var(--primary);
+}
+
+/* Player info below board, left aligned */
+.player-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0;
+}
+
+.player-avatar {
+  font-size: 2rem;
+}
+
+.player-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* Status text */
+.game-status {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+  min-height: 1.5rem;
+}

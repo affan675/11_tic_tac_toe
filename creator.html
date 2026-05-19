@@ -1,0 +1,153 @@
+<!-- xOarena/creator.html -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X O Arena — Creator</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Preloader (Enhanced) -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <h1 class="preloader-text">X O Arena</h1>
+            <p class="preloader-tagline">Play. Learn. Conquer.</p>
+            <div class="preloader-fight">
+                <span class="fighter fighter-x">X</span>
+                <span class="fighter fighter-o">O</span>
+            </div>
+            <div class="preloader-bar-container">
+                <div class="preloader-bar" id="preloaderBar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div id="customCursor" class="custom-cursor"></div>
+
+    <!-- Left Vertical Navbar -->
+    <nav class="nav-vertical" id="navVertical">
+        <a href="index.html" class="nav-icon" title="Home" data-page="home">🏠</a>
+        <a href="two_players.html" class="nav-icon" title="2 Players" data-page="two_players">👥</a>
+        <a href="ai.html" class="nav-icon" title="AI Bots" data-page="ai">🤖</a>
+        <a href="learn.html" class="nav-icon" title="Learn" data-page="learn">📘</a>
+        <a href="settings.html" class="nav-icon" title="Settings" data-page="settings">⚙️</a>
+        <a href="creator.html" class="nav-icon active" title="Creator" data-page="creator">👤</a>
+    </nav>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Audio Elements -->
+    <audio id="clickSound" preload="auto" src="assets/sounds/click.mp3"></audio>
+    <audio id="winnerSound" preload="auto" src="assets/sounds/winner.mp3"></audio>
+    <audio id="achievementSound" preload="auto" src="assets/sounds/achievement.mp3"></audio>
+
+    <!-- Main Content -->
+    <main class="main-content creator-main">
+        <h1 class="creator-page-title">👤 Meet the Creator</h1>
+
+        <div class="creator-grid">
+            <!-- Identity Card -->
+            <section class="creator-card identity-card">
+                <h2>🧑‍💻 Identity</h2>
+                <div class="identity-info">
+                    <p><strong>Name:</strong> Affan Adil</p>
+                    <p><strong>Age:</strong> 14</p>
+                    <p><strong>Grade:</strong> Class 8</p>
+                    <p><strong>Location:</strong> India 🇮🇳</p>
+                </div>
+            </section>
+
+            <!-- Life Vision Card -->
+            <section class="creator-card vision-card">
+                <h2>🔭 Life Vision</h2>
+                <p>Polymath → Tech + Business Empire</p>
+                <p class="vision-detail">Building a diversified empire spanning technology, sustainable industries, and global trade — all powered by disciplined self-education and relentless execution.</p>
+            </section>
+
+            <!-- Current Focus Card -->
+            <section class="creator-card focus-card">
+                <h2>🎯 Current Focus</h2>
+                <ul>
+                    <li>💻 Web Development (HTML, CSS, JavaScript)</li>
+                    <li>🤖 Artificial Intelligence (next in line)</li>
+                    <li>📚 Self-directed learning & skill stacking</li>
+                </ul>
+            </section>
+
+            <!-- Industry Roadmap Card -->
+            <section class="creator-card roadmap-card">
+                <h2>🏭 Industry Roadmap</h2>
+                <ul>
+                    <li>🌿 <strong>Jute Industry</strong> — Eco-friendly fiber production</li>
+                    <li>🧱 <strong>Eco Bricks</strong> — Sustainable construction materials</li>
+                    <li>🐟 <strong>Fish Feed Industry</strong> — Aquaculture nutrition</li>
+                    <li>🌍 <strong>Afrasia Exports</strong> — Global trade network</li>
+                </ul>
+            </section>
+
+            <!-- Freelancing Model Card -->
+            <section class="creator-card freelance-card">
+                <h2>💼 Freelancing Agency Model</h2>
+                <p><strong>Workflow:</strong> Client acquisition → Requirement analysis → Development → Delivery → Feedback loop</p>
+                <p><strong>Client Handling:</strong> Clear communication, milestone-based delivery, 100% satisfaction focus</p>
+                <p><strong>Revenue Goals:</strong> Build recurring income streams, scale through team delegation</p>
+            </section>
+
+            <!-- Education Strategy Card -->
+            <section class="creator-card education-card">
+                <h2>📚 Education Strategy</h2>
+                <p><strong>Current:</strong> JNV (Jawahar Navodaya Vidyalaya)</p>
+                <p><strong>Shift:</strong> Transition to Bengal Board for flexible dual-track learning</p>
+                <p><strong>Dual Track:</strong> Academic excellence + real-world skill development</p>
+            </section>
+
+            <!-- Backup Plan Card -->
+            <section class="creator-card backup-card">
+                <h2>🛡️ Backup Plan</h2>
+                <p>JEE → IIT / NIT → Job → Business</p>
+                <p class="backup-detail">If the entrepreneurial path faces obstacles, the traditional academic route through India's top engineering institutions provides a secure fallback — with business launch still as the ultimate goal.</p>
+            </section>
+
+            <!-- Core Philosophy Card -->
+            <section class="creator-card philosophy-card">
+                <h2>💎 Core Philosophy</h2>
+                <blockquote>
+                    "I am a 14-year-old polymath in training, building skills, systems, and a future business empire through disciplined execution."
+                </blockquote>
+                <p class="philosophy-attr">— Affan Adil</p>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/preloader.js"></script>
+    <script src="js/customCursor.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/tabWelcome.js"></script>
+    <script src="js/keyboardShortcuts.js"></script>
+    <script src="js/soundManager.js"></script>
+    <script src="js/achievements.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof initPreloader === 'function') initPreloader();
+            if (typeof initCustomCursor === 'function') initCustomCursor();
+            if (typeof initTheme === 'function') initTheme();
+            if (typeof initCommon === 'function') initCommon();
+            if (typeof initTabWelcome === 'function') initTabWelcome();
+            if (typeof initKeyboardShortcuts === 'function') initKeyboardShortcuts();
+            if (typeof initSoundManager === 'function') initSoundManager();
+            if (typeof initAchievements === 'function') initAchievements();
+        });
+    </script>
+</body>
+</html>

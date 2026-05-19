@@ -1,0 +1,213 @@
+<!-- xOarena/settings.html -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X O Arena — Settings</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <h1 class="preloader-text">X O Arena</h1>
+            <p class="preloader-tagline">Play. Learn. Conquer.</p>
+            <div class="preloader-fight">
+                <span class="fighter fighter-x">X</span>
+                <span class="fighter fighter-o">O</span>
+            </div>
+            <div class="preloader-bar-container">
+                <div class="preloader-bar" id="preloaderBar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div id="customCursor" class="custom-cursor"></div>
+
+    <!-- Left Vertical Navbar -->
+    <nav class="nav-vertical" id="navVertical">
+        <a href="index.html" class="nav-icon" title="Home" data-page="home">🏠</a>
+        <a href="two_players.html" class="nav-icon" title="2 Players" data-page="two_players">👥</a>
+        <a href="ai.html" class="nav-icon" title="AI Bots" data-page="ai">🤖</a>
+        <a href="learn.html" class="nav-icon" title="Learn" data-page="learn">📘</a>
+        <a href="settings.html" class="nav-icon active" title="Settings" data-page="settings">⚙️</a>
+        <a href="creator.html" class="nav-icon" title="Creator" data-page="creator">👤</a>
+    </nav>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Audio Elements -->
+    <audio id="clickSound" preload="auto" src="assets/sounds/click.mp3"></audio>
+    <audio id="winnerSound" preload="auto" src="assets/sounds/winner.mp3"></audio>
+    <audio id="achievementSound" preload="auto" src="assets/sounds/achievement.mp3"></audio>
+
+    <!-- Main Content -->
+    <main class="main-content settings-main">
+        <h1 class="settings-page-title">⚙️ Settings & Profile</h1>
+
+        <!-- Tab Toggle Buttons -->
+        <div class="settings-tabs" id="settingsTabs">
+            <button class="tab-btn active" data-tab="settings">⚙️ Settings</button>
+            <button class="tab-btn" data-tab="profile">👤 User Profile</button>
+        </div>
+
+        <!-- Settings Tab Panel -->
+        <div class="tab-panel active" id="tabSettings">
+            <!-- Theme Selector -->
+            <div class="settings-group">
+                <h3>🎨 Theme</h3>
+                <div class="theme-selector" id="themeSelector">
+                    <button class="theme-option" data-theme="light" id="themeLight">☀️ Light</button>
+                    <button class="theme-option" data-theme="dark" id="themeDark">🌙 Dark</button>
+                    <button class="theme-option" data-theme="techy" id="themeTechy">🔥 Techy Neon</button>
+                </div>
+            </div>
+
+            <!-- Feature Toggles -->
+            <div class="settings-group">
+                <h3>⚡ Feature Toggles</h3>
+                <div class="toggle-row">
+                    <span class="toggle-label">⌨️ Keyboard Shortcuts</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="toggleKeyboard" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="toggle-row">
+                    <span class="toggle-label">🔊 Sound Effects</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="toggleSound" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="toggle-row">
+                    <span class="toggle-label">🖱️ Right-Click Menu</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="toggleRightClick" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="toggle-row">
+                    <span class="toggle-label">⏳ Preloader Animation</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="togglePreloader" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="toggle-row">
+                    <span class="toggle-label">🖱️ Custom Cursor</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="toggleCursor" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Keyboard Shortcuts List -->
+            <div class="settings-group">
+                <h3>⌨️ Keyboard Shortcuts</h3>
+                <ul class="shortcut-list">
+                    <li><kbd>R</kbd> – Reset current game</li>
+                    <li><kbd>N</kbd> – New game</li>
+                    <li><kbd>T</kbd> – Cycle theme (Light → Dark → Techy)</li>
+                    <li><kbd>S</kbd> – Open Settings page</li>
+                </ul>
+            </div>
+
+            <!-- Features Overview -->
+            <div class="settings-group">
+                <h3>✨ Features Overview</h3>
+                <ul class="feature-list">
+                    <li>🎨 Three unique themes: Light, Dark, Techy Neon</li>
+                    <li>👥 2-Player mode with scoreboard & celebration effects</li>
+                    <li>🤖 7 AI bots with personalities, dialogue, and difficulty levels</li>
+                    <li>📘 Comprehensive strategy guide (Zero to Hero)</li>
+                    <li>🏅 120+ achievements to unlock</li>
+                    <li>⚙️ Customizable settings with real-time toggles</li>
+                    <li>🖱️ Custom cursor with magnetic ring</li>
+                    <li>⏳ Preloader animation with X vs O fight</li>
+                    <li>💬 Tab title change when away & welcome back toast</li>
+                    <li>🎵 Sound effects with Web Audio fallback</li>
+                    <li>⌨️ Keyboard shortcuts for quick actions</li>
+                    <li>🖱️ Right‑click custom menu on game boards</li>
+                    <li>📱 Fully responsive design for all devices</li>
+                    <li>👤 User profile with stats and achievement grid</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- User Profile Tab Panel -->
+        <div class="tab-panel" id="tabProfile">
+            <div class="profile-header">
+                <div class="profile-avatar">👤</div>
+                <h2 class="profile-username">Affan Adil</h2>
+                <p class="profile-bio">14-year-old polymath in training 🚀</p>
+            </div>
+
+            <div class="profile-stats">
+                <div class="stat-card">
+                    <span class="stat-icon">🎮</span>
+                    <span class="stat-value" id="statGamesPlayed">0</span>
+                    <span class="stat-label">Games Played</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🏆</span>
+                    <span class="stat-value" id="statWins">0</span>
+                    <span class="stat-label">Wins</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🤝</span>
+                    <span class="stat-value" id="statDraws">0</span>
+                    <span class="stat-label">Draws</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🏅</span>
+                    <span class="stat-value" id="statAchievementsUnlocked">0</span>
+                    <span class="stat-label">Achievements</span>
+                </div>
+            </div>
+
+            <div class="achievements-section">
+                <h3>🏅 Achievements</h3>
+                <div class="achievements-grid" id="achievementsGrid">
+                    <!-- Populated by achievements.js -->
+                </div>
+                <p class="achievements-count" id="achievementsCount">Unlocked: 0 / 120</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/preloader.js"></script>
+    <script src="js/customCursor.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/tabWelcome.js"></script>
+    <script src="js/keyboardShortcuts.js"></script>
+    <script src="js/soundManager.js"></script>
+    <script src="js/achievements.js"></script>
+    <script src="js/settingsUI.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof initPreloader === 'function') initPreloader();
+            if (typeof initCustomCursor === 'function') initCustomCursor();
+            if (typeof initTheme === 'function') initTheme();
+            if (typeof initCommon === 'function') initCommon();
+            if (typeof initTabWelcome === 'function') initTabWelcome();
+            if (typeof initKeyboardShortcuts === 'function') initKeyboardShortcuts();
+            if (typeof initSoundManager === 'function') initSoundManager();
+            if (typeof initAchievements === 'function') initAchievements();
+            if (typeof initSettingsUI === 'function') initSettingsUI();
+        });
+    </script>
+</body>
+</html>

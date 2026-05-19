@@ -1,0 +1,161 @@
+<!-- xOarena/index.html -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X O Arena — Home</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Preloader -->
+<div id="preloader" class="preloader">
+    <div class="preloader-content">
+        <h1 class="preloader-text">X O Arena</h1>
+        <p class="preloader-tagline">Play. Learn. Conquer.</p>
+        <div class="preloader-fight">
+            <span class="fighter fighter-x">X</span>
+            <span class="fighter fighter-o">O</span>
+        </div>
+        <div class="preloader-bar-container">
+            <div class="preloader-bar" id="preloaderBar"></div>
+        </div>
+    </div>
+</div>
+    <!-- Custom Cursor -->
+    <div id="customCursor" class="custom-cursor"></div>
+
+    <!-- Left Vertical Navbar -->
+    <nav class="nav-vertical" id="navVertical">
+        <a href="index.html" class="nav-icon active" title="Home" data-page="home">🏠</a>
+        <a href="two_players.html" class="nav-icon" title="2 Players" data-page="two_players">👥</a>
+        <a href="ai.html" class="nav-icon" title="AI Bots" data-page="ai">🤖</a>
+        <a href="learn.html" class="nav-icon" title="Learn" data-page="learn">📘</a>
+        <a href="settings.html" class="nav-icon" title="Settings" data-page="settings">⚙️</a>
+        <a href="creator.html" class="nav-icon" title="Creator" data-page="creator">👤</a>
+    </nav>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Audio Elements -->
+    <audio id="clickSound" preload="auto" src="assets/sounds/click.mp3"></audio>
+    <audio id="winnerSound" preload="auto" src="assets/sounds/winner.mp3"></audio>
+    <audio id="achievementSound" preload="auto" src="assets/sounds/achievement.mp3"></audio>
+
+    <!-- Main Content -->
+    <main class="main-content home-main">
+        <section class="hero-section">
+            <h1 class="hero-title">X O Arena</h1>
+            <p class="hero-tagline">Play. Learn. Conquer.</p>
+        </section>
+
+        <!-- Carousel -->
+        <section class="carousel-section">
+            <div class="carousel-track" id="carouselTrack">
+                <div class="carousel-slide" style="background: linear-gradient(135deg, #3b82f6, #8b5cf6);">
+                    <span class="slide-icon">🎮</span>
+                    <h2>Welcome to X O Arena</h2>
+                    <p>The ultimate Tic-Tac-Toe experience</p>
+                </div>
+                <div class="carousel-slide" style="background: linear-gradient(135deg, #10b981, #06b6d4);">
+                    <span class="slide-icon">🤖</span>
+                    <h2>7 Unique AI Bots</h2>
+                    <p>From Rookie to Expert — challenge them all</p>
+                </div>
+                <div class="carousel-slide" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">
+                    <span class="slide-icon">🏆</span>
+                    <h2>100+ Achievements</h2>
+                    <p>Unlock badges and track your progress</p>
+                </div>
+                <div class="carousel-slide" style="background: linear-gradient(135deg, #8b5cf6, #ec4899);">
+                    <span class="slide-icon">📘</span>
+                    <h2>Learn & Master</h2>
+                    <p>Zero-to-hero strategy guide included</p>
+                </div>
+                <div class="carousel-slide" style="background: linear-gradient(135deg, #06b6d4, #3b82f6);">
+                    <span class="slide-icon">⚡</span>
+                    <h2>Play Anywhere</h2>
+                    <p>Fully offline — no internet required</p>
+                </div>
+            </div>
+            <div class="carousel-dots" id="carouselDots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+                <span class="dot" data-index="4"></span>
+            </div>
+        </section>
+
+        <!-- Feature Cards -->
+        <section class="features-grid">
+            <a href="two_players.html" class="feature-card">
+                <span class="feature-emoji">👥</span>
+                <h3>2 Player Mode</h3>
+                <p>Challenge a friend on the same device</p>
+                <span class="feature-btn">Play Now</span>
+            </a>
+            <a href="ai.html" class="feature-card">
+                <span class="feature-emoji">🤖</span>
+                <h3>AI Bots</h3>
+                <p>Face 7 unique bots with personalities</p>
+                <span class="feature-btn">Battle AI</span>
+            </a>
+            <a href="learn.html" class="feature-card">
+                <span class="feature-emoji">📘</span>
+                <h3>Learn</h3>
+                <p>Master Tic-Tac-Toe strategy</p>
+                <span class="feature-btn">Study Up</span>
+            </a>
+            <a href="creator.html" class="feature-card">
+                <span class="feature-emoji">👤</span>
+                <h3>Creator</h3>
+                <p>Meet the mind behind X O Arena</p>
+                <span class="feature-btn">Discover</span>
+            </a>
+        </section>
+    </main>
+
+    <!-- Right-Click Menu (hidden by default, used on game pages only) -->
+    <div id="rightClickMenu" class="right-click-menu" style="display:none;">
+        <button data-action="reset">🔄 Reset Game</button>
+        <button data-action="new">🆕 New Game</button>
+        <button data-action="theme">🎨 Toggle Theme</button>
+    </div>
+
+    <!-- Celebration Overlay -->
+    <div id="celebrationOverlay" class="celebration-overlay"></div>
+
+    <script src="js/preloader.js"></script>
+    <script src="js/customCursor.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/tabWelcome.js"></script>
+    <script src="js/keyboardShortcuts.js"></script>
+    <script src="js/soundManager.js"></script>
+    <script src="js/rightClickMenu.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/achievements.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof initPreloader === 'function') initPreloader();
+            if (typeof initCustomCursor === 'function') initCustomCursor();
+            if (typeof initTheme === 'function') initTheme();
+            if (typeof initCommon === 'function') initCommon();
+            if (typeof initTabWelcome === 'function') initTabWelcome();
+            if (typeof initKeyboardShortcuts === 'function') initKeyboardShortcuts();
+            if (typeof initSoundManager === 'function') initSoundManager();
+            if (typeof initCarousel === 'function') initCarousel();
+            if (typeof initAchievements === 'function') initAchievements();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+/* xOarena/css/learn.css */
+/* Styles for Learn page */
+
+.learn-main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.learn-page-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.learn-subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.learn-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.learn-card {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 2rem;
+  border-left: 8px solid;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s;
+}
+
+.learn-card:hover {
+  transform: translateY(-4px);
+}
+
+.learn-card-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+.learn-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.learn-list li {
+  font-size: 1.02rem;
+  line-height: 1.5;
+}
+
+/* Color-coded borders and backgrounds */
+.basics-card {
+  border-left-color: #10b981;
+  background: #10b98110;
+}
+.beginner-card {
+  border-left-color: #f59e0b;
+  background: #f59e0b10;
+}
+.intermediate-card {
+  border-left-color: #f97316;
+  background: #f9731610;
+}
+.advanced-card {
+  border-left-color: #ef4444;
+  background: #ef444410;
+}
+.practice-card {
+  border-left-color: #8b5cf6;
+  background: #8b5cf610;
+}

@@ -1,0 +1,73 @@
+/* xOarena/css/themes.css */
+/* CSS Custom Properties for Light, Dark, Techy themes */
+
+:root,
+[data-theme="light"] {
+  --bg: #f5f7fa;
+  --surface: #ffffff;
+  --text: #1e293b;
+  --primary: #3b82f6;
+  --x-symbol: #10b981;
+  --o-symbol: #f59e0b;
+  --border: #e2e8f0;
+  --glow: none;
+  --card-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  --text-secondary: #475569;
+  --hover-bg: #f1f5f9;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --text: #f1f5f9;
+  --primary: #60a5fa;
+  --x-symbol: #34d399;
+  --o-symbol: #fbbf24;
+  --border: #334155;
+  --glow: none;
+  --card-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  --text-secondary: #94a3b8;
+  --hover-bg: #334155;
+}
+
+[data-theme="techy"] {
+  --bg: #0a0f1e;
+  --surface: #111827;
+  --text: #e2e8f0;
+  --primary: #06b6d4;
+  --x-symbol: #00ff88;
+  --o-symbol: #ff00cc;
+  --border: #1e293b;
+  --glow: 0 0 5px cyan;
+  --card-shadow: 0 0 15px rgba(6,182,212,0.15);
+  --text-secondary: #9ca3af;
+  --hover-bg: #1e293b;
+}
+
+/* Apply glow on hover for techy theme */
+[data-theme="techy"] .nav-icon:hover,
+[data-theme="techy"] .btn:hover,
+[data-theme="techy"] .feature-card:hover,
+[data-theme="techy"] .cell:hover {
+  box-shadow: 0 0 15px var(--primary);
+}
+
+[data-theme="techy"] .game-board .cell {
+  border-color: var(--border);
+  box-shadow: inset 0 0 5px rgba(6,182,212,0.3);
+}
+
+[data-theme="techy"] .turn-symbol.active {
+  text-shadow: 0 0 10px currentColor;
+}
+
+[data-theme="techy"] .bot-list-item.selected {
+  box-shadow: 0 0 15px var(--primary);
+}
+
+/* Theme toggle buttons highlight */
+.theme-option.active {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 0 10px var(--primary);
+}

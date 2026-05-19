@@ -1,0 +1,143 @@
+<!-- xOarena/learn.html -->
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X O Arena — Learn</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/learn.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Preloader -->
+<div id="preloader" class="preloader">
+    <div class="preloader-content">
+        <h1 class="preloader-text">X O Arena</h1>
+        <p class="preloader-tagline">Play. Learn. Conquer.</p>
+        <div class="preloader-fight">
+            <span class="fighter fighter-x">X</span>
+            <span class="fighter fighter-o">O</span>
+        </div>
+        <div class="preloader-bar-container">
+            <div class="preloader-bar" id="preloaderBar"></div>
+        </div>
+    </div>
+</div>
+
+    <!-- Custom Cursor -->
+    <div id="customCursor" class="custom-cursor"></div>
+
+    <!-- Left Vertical Navbar -->
+    <nav class="nav-vertical" id="navVertical">
+        <a href="index.html" class="nav-icon" title="Home" data-page="home">🏠</a>
+        <a href="two_players.html" class="nav-icon" title="2 Players" data-page="two_players">👥</a>
+        <a href="ai.html" class="nav-icon" title="AI Bots" data-page="ai">🤖</a>
+        <a href="learn.html" class="nav-icon active" title="Learn" data-page="learn">📘</a>
+        <a href="settings.html" class="nav-icon" title="Settings" data-page="settings">⚙️</a>
+        <a href="creator.html" class="nav-icon" title="Creator" data-page="creator">👤</a>
+    </nav>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Audio Elements -->
+    <audio id="clickSound" preload="auto" src="assets/sounds/click.mp3"></audio>
+    <audio id="winnerSound" preload="auto" src="assets/sounds/winner.mp3"></audio>
+    <audio id="achievementSound" preload="auto" src="assets/sounds/achievement.mp3"></audio>
+
+    <!-- Main Content -->
+    <main class="main-content learn-main">
+        <h1 class="learn-page-title">📘 Zero to Hero: Tic-Tac-Toe Mastery</h1>
+        <p class="learn-subtitle">From absolute basics to advanced strategy — master the grid, one move at a time.</p>
+
+        <div class="learn-sections">
+            <!-- Basics Section -->
+            <section class="learn-card basics-card">
+                <h2 class="learn-card-title">🟢 The Basics</h2>
+                <ul class="learn-list">
+                    <li>🎯 Goal: Get three of your symbols (X or O) in a row — horizontally, vertically, or diagonally.</li>
+                    <li>📋 The board is a 3×3 grid with 9 cells. Players alternate placing their symbol.</li>
+                    <li>🔄 X always goes first. After each game, the starting player should alternate in fair play.</li>
+                    <li>🤝 If all 9 cells are filled with no winner, the game ends in a draw (also called a "cat's game").</li>
+                    <li>⏱️ Each turn, you place one symbol in an empty cell. You cannot overwrite a filled cell.</li>
+                </ul>
+            </section>
+
+            <!-- Beginner Tips Section -->
+            <section class="learn-card beginner-card">
+                <h2 class="learn-card-title">🟡 Beginner Tips</h2>
+                <ul class="learn-list">
+                    <li>⭐ Always take the center if available — it's part of 4 winning lines (most on the board).</li>
+                    <li>📐 Corners are the next best: each corner is part of 3 winning lines.</li>
+                    <li>🚫 Avoid edges (top-middle, middle-left, etc.) early on — they only have 2 winning lines each.</li>
+                    <li>👀 Watch your opponent: if they have 2 in a row, block them immediately!</li>
+                    <li>🪞 Try to create a "fork" — two simultaneous threats the opponent can't block both.</li>
+                </ul>
+            </section>
+
+            <!-- Intermediate Traps Section -->
+            <section class="learn-card intermediate-card">
+                <h2 class="learn-card-title">🟠 Intermediate Traps & Patterns</h2>
+                <ul class="learn-list">
+                    <li>🪤 The Corner Trap: Take center, then opposite corners to create an unblockable fork.</li>
+                    <li>🔺 Triangle Setup: Place X in two corners and the center — forces O into impossible defense.</li>
+                    <li>🧲 The Bait Move: Sacrifice a non-critical line to set up a double threat elsewhere.</li>
+                    <li>🛡️ Defensive Forking: When blocking, choose the block that also creates your own threat.</li>
+                    <li>🔮 Pattern recognition: Learn the 3 most common opening sequences and their counters.</li>
+                </ul>
+            </section>
+
+            <!-- Advanced Strategy Section -->
+            <section class="learn-card advanced-card">
+                <h2 class="learn-card-title">🔴 Advanced Strategy</h2>
+                <ul class="learn-list">
+                    <li>🧠 Perfect play from both sides always results in a draw. Tic-Tac-Toe is a solved game.</li>
+                    <li>📊 Minimax algorithm: The AI evaluates every possible future move to choose the optimal one.</li>
+                    <li>🌳 Game tree: There are 255,168 possible games, but only 138 unique board states after symmetry.</li>
+                    <li>⚡ First-move advantage: X wins ~58% of games with optimal play against random defense.</li>
+                    <li>🎯 The "perfect game" path: Center → Opposite corner → Adjacent corner → Block → Fork → Win.</li>
+                </ul>
+            </section>
+
+            <!-- Practice Challenges Section -->
+            <section class="learn-card practice-card">
+                <h2 class="learn-card-title">🟣 Practice Challenges</h2>
+                <ul class="learn-list">
+                    <li>🏅 Beat Rookie Rumbler in under 5 moves (as X, with center opening).</li>
+                    <li>🥈 Force a draw against Master Mentor (Expert bot) — prove your defensive mastery.</li>
+                    <li>🥇 Win 10 games in a row against The Strategist without losing a single match.</li>
+                    <li>💎 Achieve a 3-move win: X plays center, O plays edge, X plays corner — game over.</li>
+                    <li>🏆 Unlock all 7 "Beat Bot" achievements by defeating every AI opponent.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/preloader.js"></script>
+    <script src="js/customCursor.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/tabWelcome.js"></script>
+    <script src="js/keyboardShortcuts.js"></script>
+    <script src="js/soundManager.js"></script>
+    <script src="js/achievements.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof initPreloader === 'function') initPreloader();
+            if (typeof initCustomCursor === 'function') initCustomCursor();
+            if (typeof initTheme === 'function') initTheme();
+            if (typeof initCommon === 'function') initCommon();
+            if (typeof initTabWelcome === 'function') initTabWelcome();
+            if (typeof initKeyboardShortcuts === 'function') initKeyboardShortcuts();
+            if (typeof initSoundManager === 'function') initSoundManager();
+            if (typeof initAchievements === 'function') initAchievements();
+        });
+    </script>
+</body>
+</html>

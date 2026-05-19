@@ -1,0 +1,329 @@
+/* xOarena/css/settings.css */
+/* Styles for Settings & Creator pages */
+
+.settings-main,
+.creator-main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.settings-page-title,
+.creator-page-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Tabs */
+.settings-tabs {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.tab-btn {
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  color: var(--text);
+  transition: all 0.3s;
+}
+
+.tab-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* Settings toggles and theme selector */
+.settings-group {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border);
+}
+
+.settings-group h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.theme-selector {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.theme-option {
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  font-weight: 600;
+  background: var(--hover-bg);
+  color: var(--text);
+  border: 2px solid var(--border);
+  transition: 0.3s;
+}
+
+.theme-option.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.toggle-row:last-child {
+  border-bottom: none;
+}
+
+.toggle-label {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Toggle switch */
+.toggle-switch {
+  position: relative;
+  width: 50px;
+  height: 26px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--border);
+  border-radius: 26px;
+  transition: 0.3s;
+}
+
+.toggle-slider::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .toggle-slider {
+  background: var(--primary);
+}
+
+input:checked + .toggle-slider::before {
+  transform: translateX(24px);
+}
+
+/* Profile */
+.profile-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-avatar {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile-username {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.profile-bio {
+  color: var(--text-secondary);
+}
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.stat-card {
+  background: var(--surface);
+  padding: 1.2rem 0.5rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+}
+
+.stat-icon {
+  font-size: 1.8rem;
+}
+.stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  display: block;
+  margin: 0.3rem 0;
+}
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.achievements-section h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.achievement-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.8rem;
+  border-radius: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: 0.2s;
+}
+
+.achievement-badge.locked {
+  filter: grayscale(1);
+  opacity: 0.5;
+}
+
+.achievement-emoji {
+  font-size: 2rem;
+}
+
+.achievement-name {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 0.3rem;
+}
+
+/* Creator page */
+.creator-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.creator-card {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 1.8rem;
+  border: 1px solid var(--border);
+  box-shadow: var(--card-shadow);
+}
+
+.creator-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.creator-card p,
+.creator-card li {
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+
+.creator-card blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  border-left: 4px solid var(--primary);
+  padding-left: 1rem;
+  margin: 1rem 0;
+}
+
+/* Shortcut list */
+.shortcut-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.shortcut-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+kbd {
+  background: var(--hover-bg);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: 1px solid var(--border);
+  min-width: 30px;
+  text-align: center;
+}
+
+/* Feature list */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.6rem;
+}
+.feature-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+}
+
+/* Achievement tooltip */
+.achievement-tooltip {
+  position: fixed;
+  background: var(--surface);
+  border: 1px solid var(--primary);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  pointer-events: none;
+  z-index: 11000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transform: translateX(-50%);
+  display: none;
+  white-space: nowrap;
+}
