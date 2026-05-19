@@ -20,19 +20,20 @@
     />
   </head>
   <body>
+
     <!-- Preloader -->
     <div id="preloader" class="preloader">
-      <div class="preloader-content">
-        <h1 class="preloader-text">X O Arena</h1>
-        <p class="preloader-tagline">Play. Learn. Conquer.</p>
-        <div class="preloader-fight">
-          <span class="fighter fighter-x">X</span>
-          <span class="fighter fighter-o">O</span>
+        <div class="preloader-content">
+            <h1 class="preloader-text">X O Arena</h1>
+            <p class="preloader-tagline">Play. Learn. Conquer.</p>
+            <div class="preloader-fight">
+                <span class="fighter fighter-x">X</span>
+                <span class="fighter fighter-o">O</span>
+            </div>
+            <div class="preloader-bar-container">
+                <div class="preloader-bar" id="preloaderBar"></div>
+            </div>
         </div>
-        <div class="preloader-bar-container">
-          <div class="preloader-bar" id="preloaderBar"></div>
-        </div>
-      </div>
     </div>
 
     <!-- Custom Cursor -->
@@ -40,34 +41,12 @@
 
     <!-- Left Vertical Navbar -->
     <nav class="nav-vertical" id="navVertical">
-      <a href="index.html" class="nav-icon" title="Home" data-page="home">🏠</a>
-      <a
-        href="two_players.html"
-        class="nav-icon"
-        title="2 Players"
-        data-page="two_players"
-        >👥</a
-      >
-      <a href="ai.html" class="nav-icon active" title="AI Bots" data-page="ai"
-        >🤖</a
-      >
-      <a href="learn.html" class="nav-icon" title="Learn" data-page="learn"
-        >📘</a
-      >
-      <a
-        href="settings.html"
-        class="nav-icon"
-        title="Settings"
-        data-page="settings"
-        >⚙️</a
-      >
-      <a
-        href="creator.html"
-        class="nav-icon"
-        title="Creator"
-        data-page="creator"
-        >👤</a
-      >
+        <a href="index.html" class="nav-icon" title="Home" data-page="home">🏠</a>
+        <a href="two_players.html" class="nav-icon" title="2 Players" data-page="two_players">👥</a>
+        <a href="ai.html" class="nav-icon active" title="AI Bots" data-page="ai">🤖</a>
+        <a href="learn.html" class="nav-icon" title="Learn" data-page="learn">📘</a>
+        <a href="settings.html" class="nav-icon" title="Settings" data-page="settings">⚙️</a>
+        <a href="creator.html" class="nav-icon" title="Creator" data-page="creator">👤</a>
     </nav>
 
     <!-- Toast Container -->
@@ -75,125 +54,116 @@
 
     <!-- Audio Elements -->
     <audio id="clickSound" preload="auto" src="assets/sounds/click.mp3"></audio>
-    <audio
-      id="winnerSound"
-      preload="auto"
-      src="assets/sounds/winner.mp3"
-    ></audio>
-    <audio
-      id="achievementSound"
-      preload="auto"
-      src="assets/sounds/achievement.mp3"
-    ></audio>
+    <audio id="winnerSound" preload="auto" src="assets/sounds/winner.mp3"></audio>
+    <audio id="achievementSound" preload="auto" src="assets/sounds/achievement.mp3"></audio>
 
     <!-- Main Content -->
     <main class="main-content ai-main">
-      <!-- Bot Selection Panel -->
-      <aside class="bot-panel" id="botPanel">
-        <h2 class="bot-panel-title">🤖 Choose Your Opponent</h2>
-        <ul class="bot-list" id="botList">
-          <li class="bot-list-item" data-bot="rookie">
-            <span class="bot-avatar">🔰</span>
-            <div class="bot-info">
-              <span class="bot-name">Rookie Rumbler</span>
-              <span class="bot-difficulty easy">Easy</span>
-            </div>
-          </li>
-          <li class="bot-list-item" data-bot="astro">
-            <span class="bot-avatar">🚀</span>
-            <div class="bot-info">
-              <span class="bot-name">Astro Navigator</span>
-              <span class="bot-difficulty easy-plus">Easy+</span>
-            </div>
-          </li>
-          <li class="bot-list-item" data-bot="strategist">
-            <span class="bot-avatar">🦊</span>
-            <div class="bot-info">
-              <span class="bot-name">The Strategist</span>
-              <span class="bot-difficulty medium">Medium</span>
-            </div>
-          </li>
-          <li class="bot-list-item" data-bot="justicia">
-            <span class="bot-avatar">⚖️</span>
-            <div class="bot-info">
-              <span class="bot-name">Justicia</span>
-              <span class="bot-difficulty hard">Hard</span>
-            </div>
-          </li>
-          <li class="bot-list-item" data-bot="executive">
-            <span class="bot-avatar">💼</span>
-            <div class="bot-info">
-              <span class="bot-name">The Executive</span>
-              <span class="bot-difficulty hard">Hard</span>
-            </div>
-          </li>
-          <li class="bot-list-item" data-bot="professor">
-            <span class="bot-avatar">🎓</span>
-            <div class="bot-info">
-              <span class="bot-name">Professor XO</span>
-              <span class="bot-difficulty expert">Expert</span>
-            </div>
-          </li>
-          <li class="bot-list-item selected" data-bot="mentor">
-            <span class="bot-avatar">🧠</span>
-            <div class="bot-info">
-              <span class="bot-name">Master Mentor</span>
-              <span class="bot-difficulty expert">Expert</span>
-            </div>
-          </li>
-        </ul>
-      </aside>
 
-      <!-- Game Area -->
-      <div class="game-container ai-game-container">
-        <!-- Bot info + speech bubble in a row -->
-        <div class="ai-bot-row">
-          <div class="bot-opponent-info" id="botOpponentInfo">
-            <span class="bot-opponent-avatar" id="botAvatar">🧠</span>
-            <span class="bot-opponent-name" id="botNameDisplay"
-              >Master Mentor</span
-            >
-          </div>
-          <div class="speech-bubble" id="speechBubble" style="display: none">
-            <span id="speechText"></span>
-          </div>
+        <!-- Hamburger button (visible only on mobile) -->
+        <button id="botToggleBtn" class="bot-toggle-btn" aria-label="Toggle bot panel">🤖</button>
+
+        <!-- Bot Selection Panel (wrapped for mobile toggle) -->
+        <div class="bot-panel-wrapper" id="botPanelWrapper">
+            <aside class="bot-panel" id="botPanel">
+                <h2 class="bot-panel-title">🤖 Choose Your Opponent</h2>
+                <ul class="bot-list" id="botList">
+                    <li class="bot-list-item" data-bot="rookie">
+                        <span class="bot-avatar">🔰</span>
+                        <div class="bot-info">
+                            <span class="bot-name">Rookie Rumbler</span>
+                            <span class="bot-difficulty easy">Easy</span>
+                        </div>
+                    </li>
+                    <li class="bot-list-item" data-bot="astro">
+                        <span class="bot-avatar">🚀</span>
+                        <div class="bot-info">
+                            <span class="bot-name">Astro Navigator</span>
+                            <span class="bot-difficulty easy-plus">Easy+</span>
+                        </div>
+                    </li>
+                    <li class="bot-list-item" data-bot="strategist">
+                        <span class="bot-avatar">🦊</span>
+                        <div class="bot-info">
+                            <span class="bot-name">The Strategist</span>
+                            <span class="bot-difficulty medium">Medium</span>
+                        </div>
+                    </li>
+                    <li class="bot-list-item" data-bot="justicia">
+                        <span class="bot-avatar">⚖️</span>
+                        <div class="bot-info">
+                            <span class="bot-name">Justicia</span>
+                            <span class="bot-difficulty hard">Hard</span>
+                        </div>
+                    </li>
+                    <li class="bot-list-item" data-bot="executive">
+                        <span class="bot-avatar">💼</span>
+                        <div class="bot-info">
+                            <span class="bot-name">The Executive</span>
+                            <span class="bot-difficulty hard">Hard</span>
+                        </div>
+                    </li>
+                    <li class="bot-list-item" data-bot="professor">
+                        <span class="bot-avatar">🎓</span>
+                        <div class="bot-info">
+                            <span class="bot-name">Professor XO</span>
+                            <span class="bot-difficulty expert">Expert</span>
+                        </div>
+                    </li>
+                    <li class="bot-list-item selected" data-bot="mentor">
+                        <span class="bot-avatar">🧠</span>
+                        <div class="bot-info">
+                            <span class="bot-name">Master Mentor</span>
+                            <span class="bot-difficulty expert">Expert</span>
+                        </div>
+                    </li>
+                </ul>
+            </aside>
         </div>
 
-        <!-- Game Board -->
-        <div class="game-board" id="gameBoard">
-          <div class="cell" data-index="0"></div>
-          <div class="cell" data-index="1"></div>
-          <div class="cell" data-index="2"></div>
-          <div class="cell" data-index="3"></div>
-          <div class="cell" data-index="4"></div>
-          <div class="cell" data-index="5"></div>
-          <div class="cell" data-index="6"></div>
-          <div class="cell" data-index="7"></div>
-          <div class="cell" data-index="8"></div>
-        </div>
+        <!-- Game Area -->
+        <div class="game-container ai-game-container">
+            <div class="ai-bot-row">
+                <div class="bot-opponent-info" id="botOpponentInfo">
+                    <span class="bot-opponent-avatar" id="botAvatar">🧠</span>
+                    <span class="bot-opponent-name" id="botNameDisplay">Master Mentor</span>
+                </div>
+                <div class="speech-bubble" id="speechBubble" style="display:none;">
+                    <span id="speechText"></span>
+                </div>
+            </div>
 
-        <!-- Player Info (left aligned below board) -->
-        <div class="player-info" id="playerInfo">
-          <span class="player-avatar">👤</span>
-          <span class="player-name">You</span>
-        </div>
+            <div class="game-board" id="gameBoard">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
 
-        <!-- Game Status Message -->
-        <div class="game-status" id="gameStatus"></div>
+            <div class="player-info" id="playerInfo">
+                <span class="player-avatar">👤</span>
+                <span class="player-name">You</span>
+            </div>
 
-        <!-- Buttons -->
-        <div class="game-actions">
-          <button class="btn btn-primary" id="resetBtn">🔄 Reset Game</button>
-          <button class="btn btn-secondary" id="newGameBtn">🆕 New Game</button>
+            <div class="game-status" id="gameStatus"></div>
+
+            <div class="game-actions">
+                <button class="btn btn-primary" id="resetBtn">🔄 Reset Game</button>
+                <button class="btn btn-secondary" id="newGameBtn">🆕 New Game</button>
+            </div>
         </div>
-      </div>
     </main>
 
     <!-- Right-Click Menu -->
     <div id="rightClickMenu" class="right-click-menu">
-      <button data-action="reset">🔄 Reset Game</button>
-      <button data-action="new">🆕 New Game</button>
-      <button data-action="theme">🎨 Toggle Theme</button>
+        <button data-action="reset">🔄 Reset Game</button>
+        <button data-action="new">🆕 New Game</button>
+        <button data-action="theme">🎨 Toggle Theme</button>
     </div>
 
     <!-- Celebration Overlay -->
@@ -219,19 +189,33 @@
     <script src="js/aiPage.js"></script>
     <script src="js/achievements.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        if (typeof initPreloader === "function") initPreloader();
-        if (typeof initCustomCursor === "function") initCustomCursor();
-        if (typeof initTheme === "function") initTheme();
-        if (typeof initCommon === "function") initCommon();
-        if (typeof initTabWelcome === "function") initTabWelcome();
-        if (typeof initKeyboardShortcuts === "function")
-          initKeyboardShortcuts();
-        if (typeof initSoundManager === "function") initSoundManager();
-        if (typeof initRightClickMenu === "function") initRightClickMenu();
-        if (typeof initAIPage === "function") initAIPage();
-        if (typeof initAchievements === "function") initAchievements();
-      });
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof initPreloader === 'function') initPreloader();
+            if (typeof initCustomCursor === 'function') initCustomCursor();
+            if (typeof initTheme === 'function') initTheme();
+            if (typeof initCommon === 'function') initCommon();
+            if (typeof initTabWelcome === 'function') initTabWelcome();
+            if (typeof initKeyboardShortcuts === 'function') initKeyboardShortcuts();
+            if (typeof initSoundManager === 'function') initSoundManager();
+            if (typeof initRightClickMenu === 'function') initRightClickMenu();
+            if (typeof initAIPage === 'function') initAIPage();
+            if (typeof initAchievements === 'function') initAchievements();
+
+            // Toggle bot panel on mobile
+            const toggleBtn = document.getElementById('botToggleBtn');
+            const panelWrapper = document.getElementById('botPanelWrapper');
+            if (toggleBtn && panelWrapper) {
+                toggleBtn.addEventListener('click', () => {
+                    panelWrapper.classList.toggle('show-panel');
+                });
+                // Close panel when a bot is selected (optional)
+                document.getElementById('botPanel')?.addEventListener('click', (e) => {
+                    if (e.target.closest('.bot-list-item')) {
+                        panelWrapper.classList.remove('show-panel');
+                    }
+                });
+            }
+        });
     </script>
-  </body>
+</body>
 </html>

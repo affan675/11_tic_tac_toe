@@ -324,3 +324,104 @@
     width: 100%;
   }
 }
+
+/* ========== AI Page Mobile Enhancements ========== */
+
+/* Hamburger button – visible only on mobile */
+.bot-toggle-btn {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1100;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 1.5rem;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .bot-toggle-btn {
+    display: flex;               /* show hamburger */
+  }
+
+  .ai-main {
+    grid-template-columns: 1fr;  /* single column */
+    padding: 1rem 0.5rem;
+    gap: 0;
+    position: relative;
+  }
+
+  /* Bot panel wrapper – hidden by default, slides in from left */
+  .bot-panel-wrapper {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--surface);
+    z-index: 1050;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 20px rgba(0,0,0,0.2);
+    overflow-y: auto;
+    padding-top: 4rem;
+  }
+
+  .bot-panel-wrapper.show-panel {
+    left: 0;
+  }
+
+  /* Make bot panel inside scrollable and fill the wrapper */
+  .bot-panel {
+    background: none;
+    box-shadow: none;
+    border: none;
+    padding: 1rem;
+  }
+
+  /* Game container full width, remove extra padding */
+  .ai-game-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+
+  /* Game board takes full available width */
+  .game-board {
+    max-width: 100%;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+
+  /* Adjust cell font so X/O remains proportional */
+  .cell {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .bot-panel-wrapper {
+    width: 260px;
+  }
+
+  .game-container {
+    padding: 0.5rem;
+  }
+
+  .game-actions .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}
