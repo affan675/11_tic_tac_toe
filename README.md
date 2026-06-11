@@ -352,10 +352,10 @@ copies of the Software...
 
 **Created by:** [Your Name / Your Organization]
 
-- 🌐 **Portfolio:** [Your Portfolio Link]
-- 💼 **LinkedIn:** [Your LinkedIn]
-- 🐙 **GitHub:** [Your GitHub Profile]
-- 📧 **Email:** [Your Email]
+- 🌐 **Portfolio:** [https://affan675.github.io/01_portfolio_v2/]
+- 💼 **WakaTime:** [https://wakatime.com/@affan675]
+- 🐙 **GitHub:** [https://github.com/affan675]
+- 📧 **Email:** [affanadil119@gmail.com]
 
 ### About This Project
 
